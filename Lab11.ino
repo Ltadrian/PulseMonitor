@@ -23,10 +23,6 @@ void loop() {
     int i,j;
     ctr=0;
     timeend=millis();
-    Serial.print("count: ");
-    Serial.print(count);
-    Serial.print("\ntime lapse: ");
-    Serial.println((timeend-timeref));
     float bpm = ( (count/(timeend-timeref)) * 60000);
     Serial.print("bpm: ");
     Serial.println(bpm);
@@ -60,7 +56,6 @@ void loop() {
 
 
 void isr(void){    
-  //ctr++;
   if(ctr==0)
     timeref=millis();
   ctr++;
